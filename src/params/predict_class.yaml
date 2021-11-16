@@ -1,0 +1,21 @@
+model:
+    weight_path: "./model_weight/cnn_lstm/weight_epoc6.pth"
+dataloader:
+    #base_path: "/PATHto/npz_files/"
+    base_path: "/home/aca10648jl/group/aopa/encode/"
+    slice_num: 25
+    04split: 12
+    batch_size: 10
+    train_npz_path: ["encode03","encode04" ]
+    train_csv_list: ['images_order03.csv','images_order04.csv']
+    train_label_list: ['./data/0903formated_label.csv', './data/0904formated_label.csv']
+    train_time_list: ['./data/20180903time.csv', './data/20180904time.csv']
+    val_npz_path: ["encode04"]
+    val_csv_list: ['images_order04.csv']
+    val_label_list: ['./data/0904formated_label.csv']
+    val_time_list: ['./data/20180904time.csv']
+    test_npz_path: ["encode15"]
+    test_csv_list: ['images_order15.csv']
+    test_label_list: ['./data/0915formated_label.csv']
+    test_time_list: ['./data/20180915time.csv']
+image_size: 512
