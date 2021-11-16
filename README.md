@@ -1,4 +1,4 @@
-# work_detection_PLOSONE
+# work_detection_factory_pretrain
 Improving work detection by segmentation heuristics pre-training on factory operations video
 
 # How to start
