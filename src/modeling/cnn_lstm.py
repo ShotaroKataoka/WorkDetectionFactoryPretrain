@@ -73,7 +73,6 @@ class CNN_LSTM(nn.Module):
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.sequence_length = sequence_length
-        #self.hidden = self.init_hidden(hidden_dim)
         self.lstm = nn.LSTM(input_dim, hidden_dim, num_layers=1, batch_first=True)
         self.dropout = nn.Dropout(p=dropout)
         self.hidden2tag = nn.Linear(hidden_dim, nclass)
@@ -81,15 +80,6 @@ class CNN_LSTM(nn.Module):
         self.block2 = Block()  
         self.cnn = CnnModule()  
         self.soft = nn.Softmax(dim = 1)
-
-
-    #def init_hidden(self, hidden_dim):
-    #    # Before we've done anything, we dont have any hidden state.
-    #    # Refer to the Pytorch documentation to see exactly
-    #    # why they have this dimensionality.
-    #    # The axes semantics are (num_layers, minibatch_size, hidden_dim)
-    #    return torch.zeros(1, 2, hidden_dim)
-                   
          
     def forward(self, x):
         """
