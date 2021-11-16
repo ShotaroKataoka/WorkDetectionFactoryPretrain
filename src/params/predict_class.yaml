@@ -1,7 +1,7 @@
 model:
-    weight_path: "./model_weight/cnn_lstm/WEIGHT.pth"
+    weight_path: "./model_weight/cnn_lstm/WEIGHT.pth" # Change weight_path. (predict.py)
 dataloader:
-    base_path: "/PATHto/npz_files/"
+    base_path: "/PATHto/npz_files/" # Change base_path to npz_files directory you downloaded.
     slice_num: 25
     04split: 12
     batch_size: 10
