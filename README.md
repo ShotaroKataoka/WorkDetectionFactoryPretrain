@@ -7,4 +7,5 @@ Improving work detection by segmentation heuristics pre-training on factory oper
 3. Set configure `params/predict_class.yaml`.
 4. `python train.py`
 5. `python predict.py`
+5. `python test_score.py`
 
