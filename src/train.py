@@ -24,6 +24,7 @@ valset = Segment_dataloader(mode="val")
 train_loader = DataLoader(trainset, batch_size=batch_size, shuffle=True)
 val_loader = DataLoader(valset, batch_size=batch_size, shuffle=False)
 
+
 cuda = True
 if cuda:
     device = torch.device("cuda")
@@ -40,6 +41,7 @@ evaluator = Evaluator(12)
 scheduler = LR_Scheduler("poly", 0.001, 100, len(train_loader))
 
 def training(epoch, best_pred):
+
     train_loss = 0.0
     model.train()
     num_img_tr = len(train_loader)
@@ -112,7 +114,8 @@ def validation(epoch, best_pred, best_loss):
 
     if test_loss/(i+1) < best_loss:
         best_loss = test_loss/(i+1)
-        torch.save(model.state_dict(), "./model_weight/cnn_lstm/weight_epoc{}.pth".format(epoch + 1))
+    torch.save(model.state_dict(), "./model_weight/cnn_lstm/weight_epoc{}.pth".format(epoch + 1))
+    print(f"Save ./model_weight/cnn_lstm/weight_epoc{epoch + 1}.pth")
     
     return best_pred, best_loss
 

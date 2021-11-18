@@ -42,7 +42,6 @@ def predict(date,loader):
             for index, (ans, t) in enumerate(zip(row, trow)):
                 result.append([time[batch][index], ans, t])
 
-
     result = np.array(result)
     np.savetxt('./result/result_' + str(date) + '.csv',result,delimiter=',')
 
